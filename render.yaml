@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: rag-backend-service
+    env: node
+    plan: free # Or your desired plan, e.g., "starter"
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_VERSION
+        value: "20.19.4"
+      - key: OPENAI_API_KEY
+        fromSecret: true
+      - key: QDRANT_URL
+        fromSecret: true
+      - key: QDRANT_API_KEY
+        fromSecret: true
