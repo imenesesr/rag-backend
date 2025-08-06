@@ -14,3 +14,5 @@ services:
         fromSecret: true
       - key: QDRANT_API_KEY
         fromSecret: true
+      - key: CORS_WHITELIST        
+        fromSecret: true
